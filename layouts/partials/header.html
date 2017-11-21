@@ -36,6 +36,11 @@
                             </h1>
                         {{ end }}
                         <a class="button-square" href="{{ .Site.BaseURL }}index.xml"><i class="fa fa-rss"></i></a>
+                        {{ with .Site.Params.facebook }}
+                            <a class="button-square button-social hint--top" data-hint="Facebook" title="Facebook" href="{{ . }}">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        {{ end }}
                         {{ with .Site.Params.twitter }}
                             <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="{{ . }}">
                                 <i class="fa fa-twitter"></i>
