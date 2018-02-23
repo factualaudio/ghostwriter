@@ -2,7 +2,7 @@
 <html{{ if .Site.Params.opengraph }} prefix="og: http://ogp.me/ns#"{{ end }}{{ if .Site.LanguageCode }} lang="{{ .Site.LanguageCode }}"{{ end }}>
     <head>
         <meta charset="utf-8">
-        <title>{{ .Title }}{{ if ne .Title .Site.Title }} &middot; {{ .Site.Title }}{{ end }}</title>
+        <title>{{ if .Page.IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Title }}{{ end }}</title>
         <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
